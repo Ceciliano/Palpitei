@@ -6,4 +6,4 @@ services:
   api-avaliacao:
     environment:
       NODE_ENV: dev
-    command: bash -c "cd /api-avaliacao && npm i && npm i nodemon -g && npm run dev"
+    command: bash -c "cd /api-avaliacao && npm i && npm run dev"

@@ -15,7 +15,7 @@ services:
       - 3000:3000
     environment:
       NODE_ENV: prd
-    command: bash -c "cd /api-avaliacao && npm i pm2 -g && npm start"
+    command: bash -c "cd /api-avaliacao && npm i && npm start"
     networks:
       - api
       - banco
