@@ -1,6 +1,6 @@
-const Grupo = require('../model/grupo');
+const Pergunta = require('../model/grupo');
 
-Grupo.methods(['get', 'post', 'put', 'delete']);
-Grupo.updateOptions({new: true, runValidators: true});
+Pergunta.methods(['get', 'post', 'put', 'delete']);
+Pergunta.updateOptions({ new: true, runValidators: true });
 
-module.exports = Grupo;
+module.exports = Pergunta;
