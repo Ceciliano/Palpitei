@@ -1,3 +1,3 @@
-var final server = require('./base/server');
+const server = require('./base/server');
 require('./base/database');
 require('./base/routes')(server);
