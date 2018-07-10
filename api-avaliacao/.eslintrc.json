@@ -3,7 +3,22 @@
     "plugins": [
         "import"
     ],
+    "env": {
+		"node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "script"
+    },
+    "ecmaFeatures": {
+        "modules": true,
+        "module":  true
+    },
     "rules":{
-        "linebreak-style": 0
-      }
+        "linebreak-style": 0,
+        "quotes":0,
+        "no-console":0,
+        "new-cap":0,
+        "max-len":0
+    }
 }
