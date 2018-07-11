@@ -8,5 +8,5 @@ module.exports = function(server) {
   grupoService.register(router, '/grupos');
 
   // require('../service/perguntaService')(router);
-  require('../service/respostaService')(router);
+  // require('../service/respostaService')(router);
 };
