@@ -7,6 +7,9 @@ module.exports = function(server) {
   const grupoService = require('../service/grupoService');
   grupoService.register(router, '/grupos');
 
+  const perguntaService = require('../service/perguntaService');
+  perguntaService.register(router, '/perguntas');
+
   // require('../service/perguntaService')(router);
   // require('../service/respostaService')(router);
 };

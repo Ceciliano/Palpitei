@@ -6,11 +6,11 @@ const resposta = new mongoose.Schema({
 });
 
 const pergunta = new mongoose.Schema({
-  nome: {type: String, require: true},
+  nome: {type: String, require: true, unique: true},
   respostas: [resposta],
   done: {type: Boolean, require: true, default: false},
   createAt: {type: Date, default: Date.now},
 });
 
-module.exports.mongo = pergunta;
+module.exports.pergunta = pergunta;
 module.exports.restful = restful.model('Pergunta', pergunta);
