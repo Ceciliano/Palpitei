@@ -1,4 +1,3 @@
-const restful = require('node-restful');
 const mongoose = require('mongoose');
 
 const resposta = new mongoose.Schema({
@@ -12,5 +11,4 @@ const pergunta = new mongoose.Schema({
   createAt: {type: Date, default: Date.now},
 });
 
-module.exports.pergunta = pergunta;
-module.exports.restful = restful.model('Pergunta', pergunta);
+module.exports = pergunta;

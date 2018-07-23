@@ -1,24 +1,18 @@
-const Pergunta = require('../model/pergunta').restful;
 const Grupo = require('../model/grupo');
 
-Pergunta.methods(['get', 'put', 'delete']);
-Pergunta.updateOptions({new: true, runValidators: true});
-
 module.exports = function(router) {
-    router.route( '/respostas/lista/:id' ).get((req, res) => {
-      Grupo.find({'perguntas._id': req.params.id})
-      .then((grupo) => res.status(200).json({grupo}))
+    router.route( '/perguntas/lista/:id' ).get((req, res) => {
+      Grupo.findOne({'_id': req.params.id})
+      .then((grupo) => res.status(200).json(grupo.perguntas))
       .catch((err) => res.status(400).json(err));
     });
 
-    router.route('/respostas/inserir/:id').post((req, res) => {
-      Grupo.findOne({'perguntas._id': req.params.id})
+    router.route('/perguntas/:id').post((req, res) => {
+      Grupo.findOne({'._id': req.params.id})
       .then((grupo) => {
-        grupo.perguntas[0].respostas.push({"teamId": "4", "status": "pending"});
-        console.log(grupo);
+        grupo.perguntas.push(req.body);
+        res.status(200).json(grupo);
       })
       .catch((err) => res.status(400).json(err));
     });
 };
-
-module.exports = Pergunta;
